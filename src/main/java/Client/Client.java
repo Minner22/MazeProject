@@ -6,12 +6,13 @@ import java.awt.EventQueue;
 public class Client extends JFrame {
 
     private static Generator generator;
-    private static final int COL = 20;
-    private static final int ROW = 10;
-    private static final int CSIZE = 15;
+    private static final int COL = 25;
+    private static final int ROW = 25;
+    private static final int CSIZE = 10;
+    int seed;
 
     private Client() {
-        int seed = (int) (Math.random() * 10000);
+        seed = (int) (Math.random() * 100000);
         generator = new Generator(seed, COL, ROW);
         initUI();
     }
@@ -19,8 +20,8 @@ public class Client extends JFrame {
     private void initUI() {
         setTitle("Maze");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(COL * CSIZE + 100, ROW * CSIZE + 100);
-        final MazeDrawer md = new MazeDrawer(getCells(), CSIZE);
+        setSize(COL * CSIZE + 150, ROW * CSIZE + 75);
+        final MazeDrawer md = new MazeDrawer(getCells(), CSIZE, seed);
         add(md);
         //addKeyListener(md);
         setContentPane(md);

@@ -45,7 +45,7 @@ class Generator {
             neighboursNotVisited = checkNeighbours(currCell);
             if (!neighboursNotVisited.isEmpty()) {
                 cellStack.push(currCell);
-                Cell nextCell = neighboursNotVisited.get(getNextRandVal()%neighboursNotVisited.size());
+                Cell nextCell = neighboursNotVisited.get(getNextRandVal() % neighboursNotVisited.size());
                 remWalls(currCell, nextCell);
                 nextCell.visited = true;
                 cellStack.push(nextCell);
@@ -54,7 +54,6 @@ class Generator {
         }
     }
 
-    // TODO: 29.02.2020 poprawic x==1 usunac cur3 new1 itd OK!
     private void remWalls(Cell currCell, Cell tmpCell) {
         int x = currCell.x - tmpCell.x;
         int y = currCell.y - tmpCell.y;
@@ -62,14 +61,14 @@ class Generator {
         if (x == 1) {
             currCell.walls[3] = false;
             tmpCell.walls[1] = false;
-        }else if (x == -1) {
+        } else if (x == -1) {
             currCell.walls[1] = false;
             tmpCell.walls[3] = false;
         }
         if (y == 1) {
             currCell.walls[0] = false;
             tmpCell.walls[2] = false;
-        }else if (y == -1) {
+        } else if (y == -1) {
             currCell.walls[2] = false;
             tmpCell.walls[0] = false;
         }
