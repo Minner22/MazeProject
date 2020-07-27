@@ -1,4 +1,4 @@
-package Client;
+package client;
 
 import javax.swing.*;
 import java.awt.EventQueue;
@@ -6,10 +6,10 @@ import java.awt.EventQueue;
 public class Client extends JFrame {
 
     private static Generator generator;
-    private static final int COL = 25;
-    private static final int ROW = 25;
+    private static final int COL = 10;
+    private static final int ROW = 10;
     private static final int CSIZE = 10;
-    int seed;
+    private int seed;
 
     private Client() {
         seed = (int) (Math.random() * 100000);

@@ -1,4 +1,4 @@
-package Client;
+package client;
 
 import javax.swing.*;
 import java.awt.*;
@@ -68,7 +68,7 @@ public class MazeDrawer extends JPanel implements ActionListener, KeyListener {
         if (cell.equals(currentCell)) {
             g2d.setPaint(Color.MAGENTA);
         }
-        
+
         g2d.fill(new Rectangle2D.Double(x, y, cellSize, cellSize));
     }
 
@@ -143,7 +143,7 @@ public class MazeDrawer extends JPanel implements ActionListener, KeyListener {
     }
 
     private static void infoBox(String infoMessage, String titleBar) {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar,
+        JOptionPane.showMessageDialog(null, infoMessage, titleBar,
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
